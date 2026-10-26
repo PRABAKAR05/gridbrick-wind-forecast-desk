@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      GRIDBRICK_ENVIRONMENT: production
+      GRIDBRICK_DATABASE_URL: sqlite:////app/data/gridbrick.db
+      GRIDBRICK_SEED_DIR: /app/seeds
+      # Same-origin through nginx; keep CORS tight for direct local calls.
+      GRIDBRICK_CORS_ORIGINS: http://localhost:8088,http://127.0.0.1:8088
+    volumes:
+      - gridbrick-data:/app/data
+    expose:
+      - "8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8088:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  gridbrick-data:

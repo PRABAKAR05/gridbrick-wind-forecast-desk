@@ -1,0 +1,9 @@
+line-length = 110
+target-version = "py313"
+
+[lint]
+select = ["E", "F", "I", "UP", "B", "RUF", "SIM"]
+# RUF046/UP031 are stylistic rewrites of numeric formatting; leave the explicit
+# int(round(...)) and %-format probes alone. PYI034 needs typing.Self, which is
+# not worth a compatibility shim in a small ASGI client.
+ignore = ["E501", "RUF046", "UP031", "PYI034"]
