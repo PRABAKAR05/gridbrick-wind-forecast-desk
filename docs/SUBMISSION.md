@@ -42,7 +42,7 @@ The stack is React/TypeScript/Vite, FastAPI/Python, SQLite, Docker and Vercel Se
 | Analytics | Calibration, reliability, skill benchmarks, error matrix, empirical bands |
 | Decision maths | Newsvendor quantile, hedge offset, exposure, thermal plan |
 | Data | 2,113 half-hour actuals, 25,696 forecast points, 352 vintages, committed seed |
-| Quality | 25 pytest tests, ruff, TypeScript typecheck, production build, CI |
+| Quality | 25 pytest tests, ruff, ESLint, TypeScript typecheck, production build, CI |
 | Packaging | Backend and frontend Dockerfiles, nginx, Compose, Vercel Services |
 | Docs | README, deployment guide, demo run sheet, this pack |
 

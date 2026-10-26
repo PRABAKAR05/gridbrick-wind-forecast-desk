@@ -37,7 +37,7 @@ export function VintageEvolutionChart({
       0.12,
     );
     return {
-      x: (index: number) => inner.left + (24 <= 1 ? 0 : (index / 23) * inner.width),
+      x: (index: number) => inner.left + (index / 23) * inner.width,
       y: scaleLinear(dom, [inner.top + inner.height, inner.top]),
       domain: dom,
     };

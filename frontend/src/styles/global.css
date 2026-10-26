@@ -54,6 +54,12 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+
 html,
 body,
 #root {
@@ -87,7 +93,8 @@ p {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
   color: inherit;
 }
@@ -95,6 +102,23 @@ select {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button,
+[role="button"],
+.btn,
+a.nav__item,
+.segmented__btn,
+.legend__item {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.select {
+  touch-action: manipulation;
 }
 
 :focus-visible {
@@ -121,11 +145,12 @@ a {
   position: sticky;
   top: 0;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--line);
   background: linear-gradient(180deg, #0a0c10 0%, #08090b 100%);
-  padding: 18px 12px 14px;
+  padding: calc(18px + env(safe-area-inset-top, 0px)) 12px 14px;
   gap: 22px;
 }
 
@@ -185,9 +210,11 @@ a {
   position: relative;
 }
 
-.nav__item:hover {
-  background: var(--panel-2);
-  color: var(--text);
+@media (hover: hover) and (pointer: fine) {
+  .nav__item:hover {
+    background: var(--panel-2);
+    color: var(--text);
+  }
 }
 
 .nav__item--active {
@@ -279,7 +306,7 @@ a {
 }
 
 .content {
-  padding: 22px 26px 64px;
+  padding: 22px 26px calc(64px + env(safe-area-inset-bottom, 0px));
   display: grid;
   gap: 16px;
   max-width: 1560px;
@@ -453,14 +480,16 @@ a {
   font-size: 11.5px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+  transition:
+    background 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease,
+    transform 100ms ease-out;
   white-space: nowrap;
 }
 
-.btn:hover {
-  background: #1c222b;
-  color: var(--text);
-  border-color: var(--text-3);
+.btn:active {
+  transform: translateY(1px) scale(0.99);
 }
 
 .btn:disabled {
@@ -473,9 +502,17 @@ a {
   border-color: transparent;
 }
 
-.btn--ghost:hover {
-  background: var(--panel-3);
-  border-color: var(--line);
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    background: #1c222b;
+    color: var(--text);
+    border-color: var(--text-3);
+  }
+
+  .btn--ghost:hover {
+    background: var(--panel-3);
+    border-color: var(--line);
+  }
 }
 
 .btn--icon {
@@ -490,9 +527,16 @@ a {
   font-weight: 600;
 }
 
-.btn--accent:hover {
-  background: #ffc04a;
+.btn--accent:active {
+  background: #e69b13;
   color: var(--accent-ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--accent:hover {
+    background: #ffc04a;
+    color: var(--accent-ink);
+  }
 }
 
 .segmented {
@@ -518,8 +562,14 @@ a {
   transition: background 120ms, color 120ms;
 }
 
-.segmented__btn:hover {
-  color: var(--text-2);
+.segmented__btn:active {
+  background: var(--panel-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .segmented__btn:hover {
+    color: var(--text-2);
+  }
 }
 
 .segmented__btn[aria-pressed="true"] {
@@ -555,8 +605,10 @@ a {
   max-width: 210px;
 }
 
-.select:hover {
-  border-color: var(--text-3);
+@media (hover: hover) and (pointer: fine) {
+  .select:hover {
+    border-color: var(--text-3);
+  }
 }
 
 input[type="range"] {
@@ -698,8 +750,10 @@ table.data td {
   white-space: nowrap;
 }
 
-table.data tbody tr:hover td {
-  background: rgba(255, 255, 255, 0.018);
+@media (hover: hover) and (pointer: fine) {
+  table.data tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.018);
+  }
 }
 
 table.data tbody tr:last-child td {
@@ -1195,6 +1249,7 @@ table.data td.wrap {
 /* ------------------------------------------------------------------- boot */
 .boot {
   min-height: 100vh;
+  min-height: 100svh;
   display: grid;
   place-content: center;
   justify-items: center;
@@ -1259,11 +1314,14 @@ table.data td.wrap {
 
 /* -------------------------------------------------------------- responsive */
 @media (max-width: 1320px) {
-  .grid--kpi {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
   .grid--main {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 1240px) {
+  .grid--kpi {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1278,7 +1336,7 @@ table.data td.wrap {
     flex-wrap: wrap;
     align-items: center;
     overflow: visible;
-    padding: 10px 14px 0;
+    padding: calc(10px + env(safe-area-inset-top, 0px)) 14px 0;
     gap: 8px 14px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
@@ -1313,7 +1371,7 @@ table.data td.wrap {
     display: none;
   }
   .content {
-    padding: 16px 14px 48px;
+    padding: 16px 14px calc(48px + env(safe-area-inset-bottom, 0px));
   }
   .topbar {
     padding: 0 14px;
@@ -1328,6 +1386,42 @@ table.data td.wrap {
 }
 
 @media (max-width: 700px) {
+  .topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 8px 10px;
+    padding: 10px 14px;
+  }
+
+  .topbar__title {
+    grid-column: 1 / -1;
+  }
+
+  .topbar__spacer {
+    display: none;
+  }
+
+  .topbar .field--day,
+  .topbar .field--gate {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .topbar .field--clock {
+    grid-column: 1 / -1;
+  }
+
+  .topbar > .chip {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .topbar .select {
+    max-width: none;
+  }
+
   .grid--kpi {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1357,6 +1451,43 @@ table.data td.wrap {
   }
   table.data td.wrap {
     min-width: 150px;
+  }
+}
+
+@media (pointer: coarse) {
+  /* Touch keyboards and thumbs need more room than a mouse. */
+  .select,
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .btn,
+  .select {
+    height: 36px;
+  }
+
+  .btn--icon {
+    width: 36px;
+  }
+
+  .segmented {
+    padding: 3px;
+  }
+
+  .segmented__btn {
+    height: 32px;
+    padding: 0 11px;
+  }
+
+  .nav__item {
+    min-height: 44px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
   }
 }
 

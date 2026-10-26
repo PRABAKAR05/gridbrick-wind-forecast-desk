@@ -134,6 +134,7 @@ cd backend
 python -m pytest -q                 # 25 tests
 python -m ruff check app tests scripts
 cd ../frontend
+npm run lint
 npm run typecheck
 npm run build
 ```
@@ -299,6 +300,7 @@ GridBrick/
 │   │   ├── state/               # Hash router + shareable desk state
 │   │   └── styles/              # Design tokens and responsive layout
 │   ├── Dockerfile
+│   ├── eslint.config.js
 │   ├── nginx.conf
 │   └── package.json
 ├── docs/
@@ -374,11 +376,12 @@ These are intentional, documented boundaries rather than hidden assumptions.
 ## Quality and verification
 
 - 25 backend tests: affine fit guard rails, newsvendor signs, exposure split, metrics, DST settlement clock, API contract, point-in-time invariant, bad-input rejection.
-- `ruff check` clean; TypeScript `tsc --noEmit` clean; production build passes.
+- `ruff check` clean; ESLint clean; TypeScript `tsc --noEmit` clean; production build passes.
 - `backend/scripts/smoke_api.py` hits every route and asserts the response contract.
 - End-to-end checked in Docker Compose through nginx: page, assets, SPA fallback, and API.
-- Responsive checks at 1440 px and 390 px; no horizontal overflow, no console errors.
-- CI workflow runs backend tests/lint and frontend typecheck/build on every push.
+- Responsive checks at 1280 px and 390 px, plus 1440 px during design review; no horizontal overflow, no console errors.
+- Touch checks: hover styles are capability-gated, form controls are 16 px on coarse pointers, controls are 32–44 px high, and safe-area padding is applied.
+- CI workflow runs backend tests/lint and frontend lint/typecheck/build on every push.
 
 The two defects found during review are worth recording because they were real, not cosmetic:
 
@@ -392,7 +395,7 @@ The two defects found during review are worth recording because they were real, 
 AI was used substantially and is disclosed here as the brief requires.
 
 - **Coding assistant:** OpenCode running DeepSeek V4.1 Flash Free. It was used for architecture exploration, first-pass implementation, test generation, refactoring, UI copy, and documentation.
-- **UI review skills:** `s0xdk/refactoring-ui` and `arla6ka/ui-review` were used to review layout, contrast, spacing, chart axes, and responsive behaviour.
+- **UI review skills:** loaded through `npx ui-skills` — `s0xdk/refactoring-ui`, `arla6ka/ui-review`, and `emilkowalski/mobile-native`. They informed the layout/contrast pass, chart axes, the 390/1280 review, and the touch layer (hover gating, 16 px inputs, 36–44 px targets, safe-area padding).
 - **Human/AI division:** the product framing, data-source choices, point-in-time contract, model design, and final numerical claims were directed and checked by the author. AI-generated code was not accepted on trust: the analytics were reproduced against raw BMRS responses, the invariants are enforced by tests, and the deployment was exercised end to end.
 - **No synthetic data is presented as Elexon data.** The only synthetic inputs are the two demand profiles, and they are labelled synthetic in the API, the UI, and this README.
 - **No fabricated results.** All numbers above come from the committed seed and the running API. The seed itself is a snapshot of the BMRS endpoints named in this README.

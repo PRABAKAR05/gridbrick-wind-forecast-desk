@@ -194,7 +194,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
           <div className="topbar__spacer" />
 
-          <label className="field">
+          <label className="field field--day">
             <span className="field__label">Delivery day</span>
             <select
               className="select"
@@ -210,7 +210,7 @@ export function Layout({ children }: { children: ReactNode }) {
             </select>
           </label>
 
-          <label className="field">
+          <label className="field field--gate">
             <span className="field__label">Gate</span>
             <input
               className="select"
@@ -224,7 +224,7 @@ export function Layout({ children }: { children: ReactNode }) {
             />
           </label>
 
-          <div className="field">
+          <div className="field field--clock">
             <span className="field__label">Clock</span>
             <div className="segmented" role="group" aria-label="Point-in-time clock">
               {(
