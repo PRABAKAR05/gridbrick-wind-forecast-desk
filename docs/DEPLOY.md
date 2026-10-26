@@ -45,8 +45,8 @@ The CLI prints a temporary URL and a claim URL. **Anonymous deployments sit behi
 
 A temporary deployment created during development:
 
-- Claim: <https://vercel.com/claim-deployment?code=18b52160-c2e4-45a4-abda-058908527791>
-- URL: <https://flying-cygnus-lf7tsdl.tmp.now>
+- Claim: <https://vercel.com/claim-deployment?code=d5cc9307-2786-46c9-b35b-55b366592310>
+- URL: <https://racing-pearl-3t4deg2.tmp.now>
 - Expiry: 56 minutes after creation. If it has expired, rerun the command above.
 
 After claiming, replace this section and the live link in `README.md` with the permanent production URL.

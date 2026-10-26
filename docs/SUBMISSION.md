@@ -27,9 +27,9 @@ The stack is React/TypeScript/Vite, FastAPI/Python, SQLite, Docker and Vercel Se
 ## Links
 
 - **Repository:** <https://github.com/PRABAKAR05/gridbrick-wind-forecast-desk>
-- **Live app:** <https://flying-cygnus-lf7tsdl.tmp.now> — anonymous Vercel preview. Open the [claim link](https://vercel.com/claim-deployment?code=18b52160-c2e4-45a4-abda-058908527791) and sign in to make it permanent; the URL returns 403 until claimed.
+- **Live app:** <https://racing-pearl-3t4deg2.tmp.now> — anonymous Vercel preview. Open the [claim link](https://vercel.com/claim-deployment?code=d5cc9307-2786-46c9-b35b-55b366592310) and sign in to make it permanent; the URL returns 403 until claimed.
 - **Video:** [TO BE ADDED — unlisted YouTube URL]
-- **API health:** <https://flying-cygnus-lf7tsdl.tmp.now/api/v1/health>
+- **API health:** <https://racing-pearl-3t4deg2.tmp.now/api/v1/health>
 - **Demo script:** [`docs/DEMO_SCRIPT.md`](DEMO_SCRIPT.md)
 - **Deployment notes:** [`docs/DEPLOY.md`](DEPLOY.md)
 

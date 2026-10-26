@@ -14,7 +14,7 @@ Most forecast dashboards answer neither question honestly. They show the *latest
 The pilot uses only Elexon wind data: `FUELHH` (transmission-metered wind outturn, 30-minute periods) and `WINDFOR` (hourly wind forecast vintages, with `publishTime`). It covers the 31 delivery days of January 2026.
 
 **Repository:** <https://github.com/PRABAKAR05/gridbrick-wind-forecast-desk>  
-**Live demo:** <https://flying-cygnus-lf7tsdl.tmp.now> — anonymous Vercel preview. It returns 403 until claimed; see [Deployment](#deployment) for the claim link and the permanent-deploy command.
+**Live demo:** <https://racing-pearl-3t4deg2.tmp.now> — anonymous Vercel preview. It returns 403 until claimed; see [Deployment](#deployment) for the claim link and the permanent-deploy command.
 
 ---
 
@@ -351,8 +351,8 @@ See [docs/DEPLOY.md](docs/DEPLOY.md) for exact commands, environment variables, 
 
 **Live demo:** the current preview is an anonymous Vercel deployment. Anonymous deployments sit behind a claim wall; open the claim URL, sign in, and transfer the project to make the URL public and permanent.
 
-- Claim URL: <https://vercel.com/claim-deployment?code=18b52160-c2e4-45a4-abda-058908527791>
-- Temporary URL: <https://flying-cygnus-lf7tsdl.tmp.now>
+- Claim URL: <https://vercel.com/claim-deployment?code=d5cc9307-2786-46c9-b35b-55b366592310>
+- Temporary URL: <https://racing-pearl-3t4deg2.tmp.now>
 
 If the claim window has expired, `npx vercel deploy --temporary --yes` from the repository root creates a fresh one. After `vercel login`, `vercel --prod` deploys permanently.
 
