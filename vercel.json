@@ -20,6 +20,9 @@
   },
   "rewrites": [
     { "source": "/api/(.*)", "destination": { "service": "api" } },
+    { "source": "/docs", "destination": { "service": "api" } },
+    { "source": "/redoc", "destination": { "service": "api" } },
+    { "source": "/openapi.json", "destination": { "service": "api" } },
     { "source": "/(.*)", "destination": { "service": "web" } }
   ]
 }

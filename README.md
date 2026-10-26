@@ -1,5 +1,7 @@
 # GridBrick Forecast Desk
 
+[![CI](https://github.com/PRABAKAR05/gridbrick-wind-forecast-desk/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/PRABAKAR05/gridbrick-wind-forecast-desk/actions/workflows/ci.yml)
+
 **The latest Elexon wind forecast you could actually have seen at day-ahead gate closure, with its error quantified and turned into a number to trade.**
 
 A UK energy supplier making January 2026 purchase decisions needs to answer two questions at 09:30 on D-1:
@@ -12,7 +14,7 @@ Most forecast dashboards answer neither question honestly. They show the *latest
 The pilot uses only Elexon wind data: `FUELHH` (transmission-metered wind outturn, 30-minute periods) and `WINDFOR` (hourly wind forecast vintages, with `publishTime`). It covers the 31 delivery days of January 2026.
 
 **Repository:** <https://github.com/PRABAKAR05/gridbrick-wind-forecast-desk>  
-**Live demo:** <https://turbo-crystal-h40bfl3.tmp.now> — anonymous Vercel preview. It returns 403 until claimed; see [Deployment](#deployment) for the claim link and the permanent-deploy command.
+**Live demo:** <https://nimble-savanna-6mdppyg.tmp.now> — anonymous Vercel preview. It returns 403 until claimed; see [Deployment](#deployment) for the claim link and the permanent-deploy command.
 
 ---
 
@@ -347,8 +349,8 @@ See [docs/DEPLOY.md](docs/DEPLOY.md) for exact commands, environment variables, 
 
 **Live demo:** the current preview is an anonymous Vercel deployment. Anonymous deployments sit behind a claim wall; open the claim URL, sign in, and transfer the project to make the URL public and permanent.
 
-- Claim URL: <https://vercel.com/claim-deployment?code=d6838d89-5c2e-40c4-9620-366c2144ad52>
-- Temporary URL: <https://turbo-crystal-h40bfl3.tmp.now>
+- Claim URL: <https://vercel.com/claim-deployment?code=f0c6d54c-306b-4588-b5dc-ebf1ca189481>
+- Temporary URL: <https://nimble-savanna-6mdppyg.tmp.now>
 
 If the claim window has expired, `npx vercel deploy --temporary --yes` from the repository root creates a fresh one. After `vercel login`, `vercel --prod` deploys permanently.
 

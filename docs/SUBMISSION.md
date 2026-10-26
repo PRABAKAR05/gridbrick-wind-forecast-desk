@@ -1,6 +1,6 @@
 # Submission pack
 
-Copy the relevant answers into the assignment form. Replace the bracketed links after the deployment is claimed.
+Copy the relevant answers into the assignment form. The repository and API are live now; claim the Vercel deployment to make the app URL permanent before submitting.
 
 ---
 
@@ -27,9 +27,9 @@ The stack is React/TypeScript/Vite, FastAPI/Python, SQLite, Docker and Vercel Se
 ## Links
 
 - **Repository:** <https://github.com/PRABAKAR05/gridbrick-wind-forecast-desk>
-- **Live app:** [TO BE ADDED — permanent URL after claiming the Vercel deployment]
+- **Live app:** <https://nimble-savanna-6mdppyg.tmp.now> — anonymous Vercel preview. Open the [claim link](https://vercel.com/claim-deployment?code=f0c6d54c-306b-4588-b5dc-ebf1ca189481) and sign in to make it permanent; the URL returns 403 until claimed.
 - **Video:** [TO BE ADDED — unlisted YouTube URL]
-- **API health:** `https://<deployed-host>/api/v1/health`
+- **API health:** <https://nimble-savanna-6mdppyg.tmp.now/api/v1/health>
 - **Demo script:** [`docs/DEMO_SCRIPT.md`](DEMO_SCRIPT.md)
 - **Deployment notes:** [`docs/DEPLOY.md`](DEPLOY.md)
 
@@ -71,8 +71,8 @@ AI was used substantially. The coding assistant was **OpenCode running DeepSeek 
 ## Before submitting
 
 - [ ] Claim the Vercel deployment and replace the live link.
-- [ ] Create the public GitHub repository and replace the repository link.
+- [x] Create the public GitHub repository and replace the repository link.
 - [ ] Record and upload the unlisted video; replace the video link.
 - [ ] Open every link in an incognito window.
-- [ ] Confirm the deployed app is not password-protected.
-- [ ] Confirm the repo contains no `.env`, database, `.vercel`, or credential files.
+- [ ] Confirm the deployed app is not password-protected after claiming.
+- [x] Confirm the repo contains no `.env`, database, `.vercel`, or credential files.

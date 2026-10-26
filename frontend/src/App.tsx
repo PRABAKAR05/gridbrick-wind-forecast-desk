@@ -40,8 +40,9 @@ export function App() {
         <div className="boot__panel">
           <h1 className="boot__title">The API is not reachable</h1>
           <p className="boot__text">
-            Start the FastAPI service on port 8000, then reload. In development Vite proxies{" "}
-            <code>/api</code> to it.
+            Start the FastAPI service (see the README for the exact command), then reload. In
+            development Vite proxies <code>/api</code> to it. If it is already running, wait a moment
+            for startup to finish.
           </p>
           <ErrorState error={meta.error ?? new Error("No metadata returned")} onRetry={() => meta.refetch()} />
         </div>

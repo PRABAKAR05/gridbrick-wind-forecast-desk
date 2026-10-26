@@ -45,8 +45,8 @@ The CLI prints a temporary URL and a claim URL. **Anonymous deployments sit behi
 
 A temporary deployment created during development:
 
-- Claim: <https://vercel.com/claim-deployment?code=d6838d89-5c2e-40c4-9620-366c2144ad52>
-- URL: <https://turbo-crystal-h40bfl3.tmp.now>
+- Claim: <https://vercel.com/claim-deployment?code=f0c6d54c-306b-4588-b5dc-ebf1ca189481>
+- URL: <https://nimble-savanna-6mdppyg.tmp.now>
 - Expiry: 56 minutes after creation. If it has expired, rerun the command above.
 
 After claiming, replace this section and the live link in `README.md` with the permanent production URL.
